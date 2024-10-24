@@ -1,7 +1,7 @@
 const express = require('express');
 const http = require('http');
 const WebSocket = require('ws');
-
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 // Serve static files or other Express functionality
@@ -36,5 +36,5 @@ wss.on('connection', (ws) => {
 
 // Start the server on port 8080
 server.listen(8080, () => {
-  console.log('Server running on http://localhost:8080');
+  console.log(`Server running on http://localhost:${PORT}}`);
 });
