@@ -35,6 +35,6 @@ wss.on('connection', (ws) => {
 });
 
 // Start the server on port 8080
-server.listen(8080, () => {
+server.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
