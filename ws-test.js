@@ -17,7 +17,7 @@ const wss = new WebSocket.Server({ server });
 
 wss.on('connection', (ws) => {
   console.log('Client connected');
-  ws.send(JSON.stringify({ msg: 'message' }));
+  ws.send(JSON.stringify({ msg: 'Online' }));
   ws.on('message', (message) => {
     console.log(`Received: ${message}`);
     // ws.send(JSON.stringify({ msg: `${message}` }));
@@ -41,5 +41,6 @@ wss.on('connection', (ws) => {
 
 // Start the server on port 8080
 server.listen(PORT, () => {
+  console.log(process.env.url || "url running")
   console.log(`Server running on http://localhost:${PORT}`);
 });
